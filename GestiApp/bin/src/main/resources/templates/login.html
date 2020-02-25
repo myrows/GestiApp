@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Tu App favorita para gestionar aulas en centros educativos">
+  <meta name="author" content="José M. Ruiz Laguna">
+
+  <title>GestiApp</title>
+
+  <!-- Custom fonts for this template-->
+
+  <link href="../vendor/fontawesome-free/css/all.min.css" th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="../css/main-style.css" th:href="@{/css/main-style.css}" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+  <div class="container">
+
+    <!-- FILAS EXTERIORES -->
+
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-8 col-md-4">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+
+            <!-- MAQUETACIÓN CON CARTA -->
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">GestiApp</h1>
+                  </div>
+
+                  <!-- FORMULARIO -->
+
+                  <form method="POST" th:action="@{/login}">
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="username" name="username" aria-describedby="emailHelp" placeholder="Correo electrónico" required>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+                      <input type="password" id="password" name="password" class="form-control form-control-user" placeholder="Contraseña" required>
+                    </div>
+
+                    <!-- SEND -->
+                    <button type="submit" class="btn btn-danger btn-user btn-block">Inicia sesión</button>
+                    <hr>
+                    ¿No tienes cuenta? <a th:href="@{/formRegister}" class="text-danger">¡Regístrate!</a>
+                  </form>
+
+                  <!-- FIN FORMULARIO -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- BS JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>

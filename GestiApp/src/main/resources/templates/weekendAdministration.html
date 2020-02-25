@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Tu App favorita para gestionar aulas en centros educativos">
+    <meta name="author" content="José M. Ruiz Laguna">
+
+    <title>GestiApp</title>
+
+    <!-- Custom fonts for this template-->
+
+    <link href="../vendor/fontawesome-free/css/all.min.css" th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../static/css/main-style.css" th:href="@{/css/main-style.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <ul th:replace="sidebar_footer.html :: sidebar"></ul>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+                        <h1 class="h3 mb-0 text-gray-800">Fines de semana</h1>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    
+                                    <form method="POST" th:action="@{/admin/weekend/edit}" th:object="${checker}">
+                                    	<label for="finde" class="text-danger" th:text="#{weekendmsg}">Habilitar fines de semana para que estén disponibles para su reserva</label>
+                                    	<input type="hidden" th:field="${checker.id}"></input>
+                                    	<br>
+
+                                    	<label class="radio-inline mr-3"><input type="radio" name="optradio" th:field="${checker.weekendOn}" value="true" th:checked="${checker.weekendOn}" th:text="#{yes}"></label>
+										<label class="radio-inline"><input type="radio" name="optradio" th:field="${checker.weekendOn}" value="false" th:checked="${!checker.weekendOn}" th:text="#{not}"></label>
+                                    	
+                                    	<button class="ml-2 btn btn-primary btn-danger btn-user btn-block col-4"
+											type="submit" name="guardar" th:text="#{save}">Guardar cambios</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer th:replace="sidebar_footer.html :: footer"></footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- BS JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>

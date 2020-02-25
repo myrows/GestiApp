@@ -1,0 +1,10 @@
+com.salesianos.GestiaAPP
+com.salesianostriana.dam.gestiapp
+com.salesianostriana.dam.gestiapp.config
+com.salesianostriana.dam.gestiapp.controller
+com.salesianostriana.dam.gestiapp.formbeans
+com.salesianostriana.dam.gestiapp.model
+com.salesianostriana.dam.gestiapp.repository
+com.salesianostriana.dam.gestiapp.security
+com.salesianostriana.dam.gestiapp.service
+com.salesianostriana.dam.gestiapp.service.base
